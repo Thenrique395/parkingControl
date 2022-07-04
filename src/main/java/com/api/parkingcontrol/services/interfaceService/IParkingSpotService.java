@@ -1,6 +1,8 @@
 package com.api.parkingcontrol.services.interfaceService;
 
 import com.api.parkingcontrol.models.ParkingSpotModel;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +18,7 @@ public interface IParkingSpotService {
 
     boolean existsByApartamentAndBlock(String apartament, String block);
 
-    List<ParkingSpotModel> findAll();
+    Page<ParkingSpotModel> findAll(Pageable pageable);
 
     Optional<ParkingSpotModel> findByfId(UUID id);
 
